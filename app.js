@@ -1,7 +1,7 @@
 const Web3 = require('web3');
 
 // Create a Web3 instance using an HTTP provider
-const web3 = new Web3('wss://mainnet.infura.io/ws/v3/8842e346de7b43d1913d438ada5ed473');
+const web3 = new Web3('wss://mainnet.infura.io/ws/v3/XXXX');
 
 // Get the balance of a wallet
 async function getBalance(walletAddress) {
