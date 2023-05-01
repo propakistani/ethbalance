@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> ETH BALANCE CHECKER FREE TOOL </title>
+  
+  <meta charset="utf-8">
+  <title>Ethereum Wallet Balance Checker</title>
+  <p> If you want we to develop a custom version of your wallet contact me here at "hamzadar7@icloud.com"
+  enjoy free balance checking service with this tool.</p>
+  <link source='app.js'>
+</head>
+
+<!-- <p> Lorem ipsum dolor sit.</p>> -->
+
+<body>
+
+
+  <h1>Wallet Balance Checker</h1>
+  <hr>
+  <form> <label for="walletAddress">Wallet Address:</label> <input type="text" id="walletAddress" name="walletAddress">
+    <button type="button" onclick="getBalance()">Check Balance</button> </form>
+  <div id="balance"></div>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script>     // Create a Web3 instance using an HTTP provider     
+    const web3 = new Web3('wss://mainnet.infura.io/ws/v3/8842e346de7b43d1913d438ada5ed473');
+    // Function to get the balance of a wallet   
+    async function getBalance() {
+      const walletAddress = document.getElementById('walletAddress').value;
+      const balance = await web3.eth.getBalance(walletAddress);
+      const formattedBalance = web3.utils.fromWei(balance, 'ether');
+      document.getElementById('balance').textContent = `Wallet balance: ${formattedBalance} ETH`;
+    } 
+  </script>
+</body>
+
+</html>
